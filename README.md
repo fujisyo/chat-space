@@ -11,6 +11,7 @@
 # Association
 has_many :tweets
 has_many :groups, through: groups_users
+has_many :groups_users
 
 # tweets テーブル
 
@@ -19,20 +20,24 @@ has_many :groups, through: groups_users
 |image|text|null :true|
 |tweet|text|null :false|
 |user_id|integer|null :false, foren_key: true|
+|group_id|integer|null :false, foren_key: true|
 
 
 # Association
 
 belongs_to :user
+belongs_to :group
 
 # groups テーブル
 
 |column|type|options|
 |------|----|-------|
-|group|string|null :false|
+|name|string|null :false|
 
 # Association
 has_many :users, through: groups_users
+has_many :tweets
+has_many :groups_users
 
 groups_usersテーブル
 
