@@ -9,12 +9,9 @@
       =link_to "#" do
         = icon('fas', 'cog',)
   
-  .content
-    .content__test
-      test1
-    .content__message
-      まだメッセージはありません
-    .content__test
-      test2
-    .content__message
-      Good bye World
+  .contents
+    =link_to "#", class:"content"do
+      %p.content__group-name
+        test
+      %p.content__latest-message
+        まだメッセージはありません
