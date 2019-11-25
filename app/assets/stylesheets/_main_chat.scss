@@ -1,0 +1,83 @@
+.wrapper{
+  .main__chat {
+    width: calc(100vw - 300px);
+  }
+    .main-header {
+      margin-top: 35px;
+      margin-bottom: 15px;
+      display: flex;
+      justify-content: space-between;
+      &__name {
+        color: #333333;
+        font-size: 20px;
+        padding-left: 40px;
+      } 
+    }
+    .main__edit{
+      border: solid 1px #38aef0;
+      color: #38aef0;  
+      padding-right: 20px;
+      padding-left: 20px;
+      text-align: center;
+      line-height: 40px;
+      margin-right: 40px;
+    }
+    .member {
+      font-size: 12px;
+      color: #999999;
+      padding-left: 40px;
+    }
+    .main {
+      background-color: #fafafa;
+      height: calc(100vh - 270px);
+      padding: 46px 40px ;
+      &__text{
+        padding-bottom: 10px;
+        display: flex;
+        .main__names {
+          font-size: 16px;
+          color:#434a54;
+          font-weight: bold;
+          }
+        .main__days {
+          font-size: 12px;
+          color: #999999;
+          padding-left: 10px;
+          }
+        }
+    .main__message { 
+      color: #434a54;
+      font-size: 14px;
+      }
+  }
+  .form{
+    padding: 20px 40px;
+    background-color: #ddd;
+    &__display {
+      display: flex;
+    }
+      &__main {
+        position: relative;
+        font-size: 16px;
+        color: #434a54;
+        input{padding: 0 10px;}
+        input{width: 300px;}
+        input{height: 50px;}
+      }
+      &__box {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+      }
+      &__input{
+        display: none;
+      }
+    &__sub {
+      margin-left: 15px;
+      input{background-color: #38aef0;}
+      input{width: 100px}
+      input{height: 50px;}
+      input{color: white;}
+    }
+  }
+}
