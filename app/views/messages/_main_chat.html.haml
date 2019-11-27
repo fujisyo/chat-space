@@ -1,31 +1,56 @@
-  
-.main__chat
-  .main-header
-    .main-header__name
-      group name
-    .main__edit
-      Edit
-  .member
-    Member
-  
-  .main
-    .main__text
-      .main__names
-        syota
-      .main__days
-        2019/11/23/20:18:25
-    .main__message
-      this is a first message
-  
+
+
+
+.chat
+  .header
+    .left-header
+      .left-header__title
+        グループ名
+      %ul.left-header__members
+        Member：
+        %li.member
+          メンバー名
+        %li.member
+          メンバー名
+        %li.member
+          メンバー名
+    .right-header
+      .right-header__button
+        Edit
+  .messages
+    .message
+      .upper-message
+        .upper-message__user-name
+          メンバー
+        .upper-message__date
+          2017/04/04
+      .lower-meesage
+        .lower-message__content
+          メッセージ
+    .message
+      .upper-message
+        .upper-message__user-name
+          メンバー
+        .upper-message__date
+          2017/04/04
+      .lower-meesage
+        .lower-message__content
+          メッセージ
+    .message
+      .upper-message
+        .upper-message__user-name
+          メンバー
+        .upper-message__date
+          2017/04/04
+      .lower-meesage
+        .lower-message__content
+          メッセージ
 
   .form
-    .form__display
-      .form__main
-        %input{type: "text", placeholder: "type a message"}
-        %label.form__box
-          =icon('fas', 'image')
-          .form__input
-            %input{type: "file"}
-      .form__sub
-        %input{type: "submit", value: "SEND"}
-
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
