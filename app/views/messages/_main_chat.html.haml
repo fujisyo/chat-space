@@ -1,31 +1,26 @@
-  
-.main__chat
-  .main-header
-    .main-header__name
-      group name
-    .main__edit
-      Edit
-  .member
-    Member
-  
-  .main
-    .main__text
-      .main__names
-        syota
-      .main__days
-        2019/11/23/20:18:25
-    .main__message
-      this is a first message
-  
+
+.chat
+  .header
+    .left-header
+      .left-header__title
+        = @group.name
+      %ul.left-header__members
+        Member：
+        - @group.users.each do |user|
+          %li.member
+            = user.name
+    .right-header
+      .right-header__button
+        = link_to edit_group_path(@group) do
+          Edit
+  .messages
+    = render partial: "message", collection: @messages
 
   .form
-    .form__display
-      .form__main
-        %input{type: "text", placeholder: "type a message"}
-        %label.form__box
-          =icon('fas', 'image')
-          .form__input
-            %input{type: "file"}
-      .form__sub
-        %input{type: "submit", value: "SEND"}
-
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'

@@ -1,84 +1,104 @@
 .wrapper{
-  .main__chat {
-    width: calc(100vw - 300px);
-  }
-    .main-header {
-      margin-top: 35px;
-      margin-bottom: 15px;
-      display: flex;
-      justify-content: space-between;
-      &__name {
-        color: #333333;
+  display: flex;
+.chat {
+  width: calc(100% - 300px);
+  .header {
+    box-sizing: border-box;
+    height: 100px;
+    padding: 0 40px;
+    .left-header {
+      float: left;
+      &__title {
+        color: #333;
         font-size: 20px;
-        padding-left: 40px;
-      } 
-    }
-    .main__edit{
-      border: solid 1px #38aef0;
-      color: #38aef0;  
-      padding-right: 20px;
-      padding-left: 20px;
-      text-align: center;
-      line-height: 40px;
-      margin-right: 40px;
-    }
-    .member {
-      font-size: 12px;
-      color: #999999;
-      padding-left: 40px;
-    }
-    .main {
-      background-color: #fafafa;
-      height: calc(100vh - 270px);
-      padding: 46px 40px ;
-      &__text{
-        padding-bottom: 10px;
+        margin-top: 35px;
+      }
+      &__members {
+        color: #999;
         display: flex;
-        .main__names {
-          font-size: 16px;
-          color:#434a54;
-          font-weight: bold;
-          }
-        .main__days {
-          font-size: 12px;
-          color: #999999;
-          padding-left: 10px;
-          }
+        font-size: 12px;
+        margin-top: 15px;
+        .member {
+          display: inline-block;
+          padding-right: 5px;
         }
-    .main__message { 
-      color: #434a54;
-      font-size: 14px;
       }
-  }
-  .form{
-    padding: 20px 40px;
-    background-color: #ddd;
-    &__display {
-      display: flex;
     }
-      &__main {
-        position: relative;
-        font-size: 16px;
-        color: #434a54;
-        input{padding: 0 10px;}
-        input{width: 900px;}
-        input{height: 50px;}
+    .right-header {
+      border: 1px solid #38AEF0;
+      color: #38AEF0;
+      float: right;
+      height: 40px;
+      line-height: 40px;
+      margin-top: 28px;
+      padding: 0 20px;
+    }
+  }
+
+  .messages {
+    background-color: #FAFAFA;
+    box-sizing: border-box;
+    padding: 46px 40px 0;
+    height: calc(100% - 100px - 90px);
+    .message {
+      .upper-message {
+        display: flex;
+        &__user-name {
+          color: #434a54;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        &__date {
+          color: #999;
+          font-size: 12px;
+          padding-left: 10px;
+        }
       }
-      &__box {
-        position: absolute;
-        right: 10px;
-        top: 10px;
-        
+      .lower-message {
+        margin-top: 10px;
+        &__content {
+          color: #434a54;
+          font-size: 14px;
+          margin-bottom: 40px;
+        }
       }
-      &__input{
+    }
+  }
+
+  .form {
+    background-color: #DDDDDD;
+    box-sizing: border-box;
+    height: 90px;
+    padding: 20px 50px 20px 40px;
+    &__message {
+      border: none;
+      float: left;
+      height: 50px;
+      width: calc(100% - 150px);
+    }
+    &__mask {
+      background-color: white;
+      float: left;
+      height: 50px;
+      padding-right: 10px;
+      &__image {
+        font-size: 20px;
+        line-height: 50px;
+      }
+      .hidden {
         display: none;
       }
-    &__sub {
+    }
+    &__submit {
+      background-color: #38aef0;
+      border: none;
+      color: white;
+      float: right;
+      font-size: 16px;
+      height: 50px;
       margin-left: 15px;
-      input{background-color: #38aef0;}
-      input{width: 100px}
-      input{height: 50px;}
-      input{color: white;}
+      padding: 0 30px;
     }
   }
+}
 }
