@@ -56,10 +56,8 @@ $(function(){
           data: {id: last_message_id}
         })
         .done(function(messages) {
-          console.log(messages)
           var insertHTML = '';
           $.each(messages, function(i, message){
-            console.log(message)
             insertHTML += buildHTML(message)
           });
           $('.messages').append(insertHTML);
